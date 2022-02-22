@@ -1,15 +1,9 @@
 
 module.exports = function towelSort (matrix) {
 
-  if(matrix === undefined){
+  if(!matrix || matrix.leghth === 0){
   return [];
-  }
-  if(matrix){
-    matrix.forEach((element, index) => {
-      if(index % 2){
-        element.reverse();
-      }
-    })
-    return matrix.contact.aply([], matrix);
+  } else{
+    return matrix.map((element, index) => index % 2 === 0 ? element : element.reverse()).flat();
   }
 }
